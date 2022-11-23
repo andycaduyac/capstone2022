@@ -65,7 +65,7 @@ class CustomerController extends Controller
             'reservation_date'              =>      $request->reservation_date,
             'type'                          =>      $request->type,
             'message'                       =>      $request->message,
-            'remember_token'                =>      $token
+            'remember_token'                =>      'JYRAS-'.$token
         ]);
 
         Mail::send('customer-side.confirmation-mail', ['reservation' => $reservation], function($mail) use($reservation){

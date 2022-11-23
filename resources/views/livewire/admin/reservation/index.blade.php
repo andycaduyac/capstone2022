@@ -81,7 +81,7 @@
                                                 <td>{{$reservation->telephone_no}}</td>
                                                 <td>{{$reservation->reservation_date}}</td>
                                                 <td>{{$reservation->type}}</td>
-                                                <td>JYRS-{{$reservation->remember_token}}</td>
+                                                <td>{{$reservation->remember_token}}</td>
                                                 <td>{{$reservation->message}}</td>
                                                 <td>
                                                     {{-- <a href="{{ url('admin/reservations/'.$reservation->id.'/edit') }}" class="btn btn-warning btn-sm my-2"><i class="mdi mdi-lead-pencil"></i></a> --}}

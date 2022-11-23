@@ -11,25 +11,14 @@
                 <hr>
 
                 <div class="form-floating mb-3 mt-4 mx-2">
-                    <input type="text" for="name" class="form-control" name="name" placeholder="Name">
-                    <label for="name" class="text-secondary"><i class="bi bi-person"></i> Full Name</label>
-                </div>
-
-                <div class="form-floating mb-3 mx-2">
-                    <input type="email" for="email" class="form-control" name="email" placeholder="Email">
-                    <label for="email" class="text-secondary"><i class="bi bi-envelope"></i> Email address</label>
+                    <input type="text" for="name" class="form-control" name="username" placeholder="Username">
+                    <label for="name" class="text-secondary"><i class="bi bi-person"></i> Username </label>
                 </div>
 
                 <div class="form-floating mb-3 mx-2">
                     <input type="password" for="password" class="form-control" name="password" placeholder="Password">
                     <label for="password" class="text-secondary"><i class="bi bi-key"></i> Password</label>
                 </div>
-
-                <div class="form-floating mb-3 mx-2">
-                    <input type="password" for="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
-                    <label for="confirm_password" class="text-secondary"><i class="bi bi-key"></i> Confirm Password</label>
-                </div>
-
 
                 <button class="btn btn-primary d-flex mx-auto px-5 mb-4 mt-4" id=" regBtn" type="submit">REGISTER</button>
                 <a href="/login" class="d-flex">Already have an account?</a>
