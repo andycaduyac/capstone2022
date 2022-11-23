@@ -70,7 +70,7 @@
                                     <div class="row mb-3">
                                         <div class="col-md-6 mb-4 pb-2">
                                             <label class="form-label text-dark" for="date">Date</label>
-                                            <input type="date" name="reservation_date" class="form-control form-control-lg">
+                                            <input type="text" name="reservation_date" id="picker" class="form-control form-control-lg" placeholder="Select Date">
                                         </div>
 
                                         <div class="col-md-6 mb-4 pb-2">
@@ -117,31 +117,13 @@
     </script>
 
     <script>
-        jQuery.datetimepicker.setDateFormatter('moment')
         $('#picker').datetimepicker({
-            timepicker: true,
             datepicker:true,
-            format: 'YYYY-MM-DD H:mm',
-            hours12: false,
-            step: 30,
-            disabledWeekDays:[6, 0],
-            todayBtn: true,
-            minTime:'8:00',
-            maxTime:'17:00',
-            //disableDate:[''],
-            //timeHeightInTimePicker: 25,
+            timepicker: false,
+            format: 'Y-m-d',
+            value: new Date(),
             minDate: new Date(),
-            todayButton:true,
-            scrollTime:true,
-            minDateTime:true,
-        })
-        $('#toggle').on('click', function(){
-            $('#picker').datetimepicker('toggle')
-        })
-        $('#picker').on("change.datetimepicker", function (e){
-            let date = $(this).data('appointmentdate');
-            //console.log(date);
-            eval(date).set('schedule', $('#appointmentSched').val());
+            weeks: false,
         })
     </script>
 

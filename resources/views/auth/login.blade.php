@@ -19,15 +19,15 @@
                      <p class="text-muted d-flex justify-content-center m-2"> Admin Login </p>
                      <hr>
                     <div class="form-floating mb-3 mt-4">
-                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email">
-                        <label for="floatingInput" class="text-secondary"><i class="mdi mdi-email "></i> Email address </label>
+                        <input type="email" class="form-control" id="floatingInput" name="text" placeholder="Email">
+                        <label for="floatingInput" class="text-secondary"><i class="mdi mdi-email "></i>Username </label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="floatingInput" name="password" placeholder="Password">
                         <label for="floatingInput" class="text-secondary"><i class="mdi mdi-key"></i> Password </label>
                     </div>
                     <button class="btn btn-primary d-flex mx-auto px-5 mb-4 mt-4" id="loginBtn" type="submit">LOGIN</button>
-                    <a href="/admin-register" class="d-flex">Don't have an account yet?</a>
+                    {{-- <a href="/admin-register" class="d-flex">Don't have an account yet?</a> --}}
                 </form>
             </div>
         </div>

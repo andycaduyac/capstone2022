@@ -47,31 +47,9 @@
 
             </div>
         </div>
-        <div class="container mt-5 border p-3" id="message-form">
-            Send us a message:
-            <form action="" method="post">
-                <div class="row">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <label for="">Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col mb-3">
-                                <label for="">Email</label>
-                                <input type="text"  class="form-control">
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <label class="form-label text-dark">Message:</label>
-                                <textarea name='message' class="form-control" rows="5"></textarea>
-                            </div>
-                            <div class="pt-2">
-                                <input class="btn btn-primary btn-lg float-end" type="submit" value="Submit" />
-                            </div>
-                        </div>
-                    </div>
-            </form>
-
+        <div class="container mt-5 p-3" id="message-form">
+            <h4>Visit us: </h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1168.3710160624078!2d123.95224330583027!3d9.940947386481511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa2f9f5fae5763%3A0xbf1f94bae0d543f0!2sJyra&#39;s%20Resort!5e0!3m2!1sen!2sph!4v1669165088499!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
@@ -83,7 +61,7 @@
             transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
             padding: 14px 35px 18px 35px;
             cursor: pointer;
-            height: 18rem;
+            height: 12rem;
         }
 
         .card:hover{
@@ -101,16 +79,16 @@
             animation: fadeInUp 1.2s both;
         }
         #card2{
+            -webkit-animation: fadeInUp 1.5s both;
+            -moz-animation: fadeInUp 1.5s both;
+            -o-animation: fadeInUp 1.5s both;
+            animation: fadeInUp 1.5s both;
+        }
+        #card3{
             -webkit-animation: fadeInUp 1.8s both;
             -moz-animation: fadeInUp 1.8s both;
             -o-animation: fadeInUp 1.8s both;
             animation: fadeInUp 1.8s both;
-        }
-        #card3{
-            -webkit-animation: fadeInUp 2.4s both;
-            -moz-animation: fadeInUp 2.4s both;
-            -o-animation: fadeInUp 2.4s both;
-            animation: fadeInUp 2.4s both;
         }
         @keyframes fadeInUp {
             0%{

@@ -20,7 +20,4 @@ class AdminController extends Controller
         return view('admin.user.index');
     }
 
-
-
-
 }
