@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FunctionHall;
+use App\Models\Cottage;
 use Illuminate\Http\Request;
 
-class FunctionHallController extends Controller
+class CottageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FunctionHallController extends Controller
      */
     public function index()
     {
-        return view('admin.function-hall.index');
+        return view('admin.cottage.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class FunctionHallController extends Controller
      */
     public function create()
     {
-        return view('admin.function-hall.create');
+        return view('admin.cottage.create');
     }
 
     /**
@@ -40,21 +40,21 @@ class FunctionHallController extends Controller
             'price'              => ['required', 'numeric'],
         ]);
 
-        FunctionHall::create([
+        Cottage::create([
             'title'                      =>              $request->title,
             'price'                      =>              $request->price,
         ]);
 
-        return redirect('/admin/function-hall')->with('message','Added Successfully');
+        return redirect('/admin/cottages')->with('message','Added Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(FunctionHall $functionHall)
+    public function show($id)
     {
         //
     }
@@ -62,43 +62,43 @@ class FunctionHallController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(FunctionHall $functionHall)
+    public function edit(Cottage $cottage)
     {
-        return view('admin.function-hall.edit', compact('functionHall'));
+        return view('admin.cottage.edit', compact('cottage'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FunctionHall $functionHall)
+    public function update(Request $request, Cottage $cottage)
     {
         $request->validate([
             'title'                         =>      'required|string',
             'price'                         =>      'required|numeric',
         ]);
 
-        $functionHall->update([
+        $cottage->update([
             'title'                     =>      $request->title,
             'price'                     =>      $request->price,
         ]);
 
-        return redirect('/admin/function-hall')->with('message', 'Updated Successfully');
+        return redirect('/admin/cottages')->with('message', 'Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FunctionHall $functionHall)
+    public function destroy($id)
     {
         //
     }

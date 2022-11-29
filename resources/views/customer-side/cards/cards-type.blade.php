@@ -11,7 +11,7 @@
             </div>
             <ul class="sci">
                 <li>
-                    <a href="/make-reservation" class="btn btn-primary btn-sm">Book</a>
+                    <a href="/all-cottages" class="btn btn-primary btn-sm">View</a>
                 </li>
             </ul>
         </div>
@@ -26,7 +26,7 @@
             </div>
             <ul class="sci">
                 <li>
-                    <a href="/make-reservation" class="btn btn-primary btn-sm">Book</a>
+                    <a href="/all-tables" class="btn btn-primary btn-sm">View</a>
                 </li>
             </ul>
         </div>
@@ -41,7 +41,7 @@
             </div>
             <ul class="sci">
                 <li>
-                    <a href="/make-reservation" class="btn btn-primary btn-sm">Book</a>
+                    <a href="/all-functionhall" class="btn btn-primary btn-sm">View</a>
                 </li>
             </ul>
         </div>

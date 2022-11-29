@@ -30,7 +30,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid mt-5">
+{{-- <div class="container-fluid mt-5">
 
     <h4>Recent</h4>
     <div class="card">
@@ -40,6 +40,6 @@
         </div>
 
     </div>
-</div>
+</div> --}}
 
 @endsection

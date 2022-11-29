@@ -1,28 +1,15 @@
 <div id="resort">
-    <h4 class="display-5 mt-4 d-flex justify-content-center">The Resort</h4>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="{{url('/resort-images/resort-img.png')}}" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="{{url('/resort-images/resort2.jpg')}}" alt="Second slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+
+    <section id="header" class="jumbotron text-center">
+        <br>
+        <br>
+        <h1 class="display-3 text-white py-2"><strong>JYRA'S RESORT</strong></h1>
+        <p class="lead text-white">Guiwanon, Tubigon, Bohol</p>
+        <br> <br>
+        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, debitis iusto. <br> Quasi soluta voluptatum doloremque quod perferendis similique modi velit ipsa accusamus? <br> Quibusdam excepturi earum ducimus aspernatur consequatur alias magnam.</p>
+        <br> <br> <br> <br>
+        {{-- <a href="/make-reservation" class="my-3 text-white" id="mk-reserve">Make Reservation</a> --}}
+    </section>
 </div>
 <style>
 

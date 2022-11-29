@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FunctionHall;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
-class FunctionHallController extends Controller
+class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FunctionHallController extends Controller
      */
     public function index()
     {
-        return view('admin.function-hall.index');
+        return view('admin.room.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class FunctionHallController extends Controller
      */
     public function create()
     {
-        return view('admin.function-hall.create');
+        return view('admin.room.create');
     }
 
     /**
@@ -37,24 +37,26 @@ class FunctionHallController extends Controller
     {
         $request->validate([
             'title'              => ['required', 'string'],
+            'type'              => ['required', 'string'],
             'price'              => ['required', 'numeric'],
         ]);
 
-        FunctionHall::create([
+        Room::create([
             'title'                      =>              $request->title,
+            'type'                      =>              $request->type,
             'price'                      =>              $request->price,
         ]);
 
-        return redirect('/admin/function-hall')->with('message','Added Successfully');
+        return redirect('/admin/rooms')->with('message','Added Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(FunctionHall $functionHall)
+    public function show($id)
     {
         //
     }
@@ -62,43 +64,45 @@ class FunctionHallController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(FunctionHall $functionHall)
+    public function edit(Room $room)
     {
-        return view('admin.function-hall.edit', compact('functionHall'));
+        return view('admin.room.edit', compact('room'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FunctionHall $functionHall)
+    public function update(Request $request, Room $room)
     {
         $request->validate([
             'title'                         =>      'required|string',
+            'type'                          =>      'required|string',
             'price'                         =>      'required|numeric',
         ]);
 
-        $functionHall->update([
+        $room->update([
             'title'                     =>      $request->title,
+            'type'                      =>      $request->type,
             'price'                     =>      $request->price,
         ]);
 
-        return redirect('/admin/function-hall')->with('message', 'Updated Successfully');
+        return redirect('/admin/rooms')->with('message', 'Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\FunctionHall  $functionHall
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FunctionHall $functionHall)
+    public function destroy($id)
     {
         //
     }

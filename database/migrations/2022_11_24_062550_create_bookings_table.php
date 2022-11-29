@@ -19,6 +19,7 @@ class CreateBookingsTable extends Migration
             $table->bigInteger('table_id')->unsigned();
             $table->bigInteger('functionhall_id')->unsigned();
             $table->bigInteger('cottage_id')->unsigned();
+            $table->bigInteger('room_id')->unsigned();
             $table->timestamps();
 
 
@@ -26,6 +27,8 @@ class CreateBookingsTable extends Migration
             $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('functionhall_id')->references('id')->on('function_halls')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('cottage_id')->references('id')->on('cottages')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
 

@@ -6,9 +6,9 @@
             Jyra's Resort
         <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="images/logo-mini.svg" alt="logo"/></a>
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        {{-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-sort-variant"></span>
-        </button>
+        </button> --}}
       </div>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">

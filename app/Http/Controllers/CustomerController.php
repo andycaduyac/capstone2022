@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\GuestReservation;
@@ -22,7 +23,7 @@ class CustomerController extends Controller
 
     public function index()
     {
-        return view('layouts.includes.customer.home');
+        //
 
     }
 
@@ -34,7 +35,8 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customer-side.create');
+        $bookings = Booking::all();
+        return view('admin.customer.index', compact('bookings'));
     }
 
     /**
@@ -45,46 +47,24 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        $booking = Booking::all();
         $request->validate([
-            'first_name'                    =>      'required|string',
-            'last_name'                     =>      'required|string',
-            'email'                         =>      'required|email',
-            'telephone_no'                  =>      'required|string|max:11',
-            'reservation_date'              =>      'required|date_format:Y-m-d',
-            'type'                          =>      'required|string',
-            'message'                       =>      'nullable|string',
+            'first_name'                         =>      'required|string',
+            'last_name'                          =>      'required|string',
+            'email'                              =>      'required|email',
+            'phone'                              =>      'required|string',
+            'booking_id'                         =>      $booking->id(),
         ]);
 
-        $token = Str::random(5);
 
-        $reservation = GuestReservation::create([
-            'first_name'                    =>      $request->first_name,
-            'last_name'                     =>      $request->last_name,
-            'email'                         =>      $request->email,
-            'telephone_no'                  =>      $request->telephone_no,
-            'reservation_date'              =>      $request->reservation_date,
-            'type'                          =>      $request->type,
-            'message'                       =>      $request->message,
-            'remember_token'                =>      'JYRAS-'.$token
+        Booking::create([
+            'book_date'                         =>      $request->date,
+            'table_id'                          =>      $request->table_id,
+            'functionhall_id'                   =>      $request->functionhall_id,
+            'cottage_id'                        =>      $request->cottage_id,
         ]);
 
-        Mail::send('customer-side.confirmation-mail', ['reservation' => $reservation], function($mail) use($reservation){
-            $mail->to($reservation->email);
-            $mail->subject('Confirm your Reservation');
-        });
-
-        return redirect('/make-reservation')->with('message','Please check your email to confirm your reservation');
-    }
-
-    public function confirmation(GuestReservation $reservation, $token){
-        if($reservation->remember_token == $token){
-
-            $reservation->verified_at = now();
-            $reservation->save();
-            return view('customer-side.confirmed', compact('reservation'))->with('message', 'Reservation completely made.');
-        }
-
-        return redirect('/')-with('error', 'Failed to make the reservation');
+        return redirect('/admin/bookings')->with('Booking added.');
     }
 
     // public function confirmReservation(){

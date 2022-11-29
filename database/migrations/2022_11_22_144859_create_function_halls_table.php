@@ -15,7 +15,7 @@ class CreateFunctionHallsTable extends Migration
     {
         Schema::create('function_halls', function (Blueprint $table) {
             $table->id();
-            $table->string('functionhall_number');
+            $table->string('title');
             $table->decimal('price', 8,2);
             $table->timestamps();
         });
